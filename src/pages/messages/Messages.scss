@@ -71,6 +71,12 @@ body {
     }
     
     .messages-list {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background: #038be5;
+        width: 50%;
+        border-radius: 5px;
         .message {
             display: flex;
             margin-bottom: 10px;
@@ -84,11 +90,18 @@ body {
             }
 
             button {
-                margin: 2px;
-                border: 1px solid black;
-                padding: 4px;
-                background: yellow;
+                margin: 10px 10px;
+                padding: 10px;
+                border: 0;
                 border-radius: 5px;
+                font-size: 16px;
+                background: gold;
+                color: #fff;
+                cursor: pointer;
+    
+                &:hover {
+                    background: goldenrod;
+                }
             }
         }
     }

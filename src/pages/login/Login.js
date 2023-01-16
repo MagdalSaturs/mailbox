@@ -29,7 +29,7 @@ const Login = () => {
     return (
         <div className="login">
             <form>
-                <h1>Mailer admin</h1>
+                <h1>Messages</h1>
                 <input ref={emailRef} placeholder='Email' type='text'></input>
                 <input ref={passwordRef} placeholder='password' type='password'></input>
                 <button onClick={e => loginHandler(e)}>Login</button>

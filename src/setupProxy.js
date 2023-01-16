@@ -4,7 +4,10 @@ module.exports = function(app) {
   app.use(
     [
       '/api/user/login',
-      '/api/messages'
+      '/api/messages',
+      '/api/delete/message',
+      '/api/read/message',
+      '/api/add/message',
     ],
 
     createProxyMiddleware({
