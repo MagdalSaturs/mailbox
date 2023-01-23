@@ -11,14 +11,16 @@ const Messages = () => {
     const contentRef = React.createRef();
 
     const sendMessage = async (e) => {
-        e.preventDefault();
-        
+        e.preventDefault(); 
+
+
         const title = titleRef.current.value,
-              sender = sessionStorage.getItem('username'),
               reciver = reciverRef.current.value,
               content = contentRef.current.value
 
-        const data = { title, sender, reciver, content, read: false };
+        const data = { title, reciver, content, read: false, token };
+        
+        console.log(data)
 
         const response = await axios.post('/api/add/message', data ,{
             headers: {
@@ -51,15 +53,11 @@ const Messages = () => {
         getMessages();
     }, []);
 
-    const unread = () => {
-        const unreadMessages = messages.filter(message => message.read === false);
+    const read = () => {
+        const unreadMessages = messages.filter(message => message.read === true);
         setMessages(unreadMessages);
     };
 
-    const read = () => {
-        const readMessages = messages.filter(message => message.read === true);
-        setMessages(readMessages);
-    };
 
     const send = () => {
         const sendMessages = messages.filter(message => message.sender === sessionStorage.getItem('username'));
@@ -107,7 +105,6 @@ const Messages = () => {
 
             <div className='filters'>
                 <button onClick={getMessages}>All</button>
-                <button onClick={unread}>Unread</button>
                 <button onClick={read}>Read</button>
                 <button onClick={send}>Send</button>
             </div>
