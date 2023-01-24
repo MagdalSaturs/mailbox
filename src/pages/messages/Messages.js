@@ -32,7 +32,6 @@ const Messages = () => {
         console.log(response.data)
 
         if (response.data.success) {
-            console.log('Wysłano email')
             getMessages();
             document.getElementById('form').reset();
         }
@@ -59,9 +58,12 @@ const Messages = () => {
     };
 
 
-    const send = () => {
-        const sendMessages = messages.filter(message => message.sender === sessionStorage.getItem('username'));
-        setMessages(sendMessages);
+    const send = async () => {
+        const response = await axios.get('/api/send/messages');
+
+        if (response.data.success) {
+            setMessages(response.data.messages);
+        }
     };
 
     const readMessage = async (id) => {
@@ -93,37 +95,41 @@ const Messages = () => {
     };
 
     return (
-        <div className="messages">
+        <>
             <h1>Messages</h1>
-            <form>
-                <h1>Write</h1>
-                <input ref={titleRef} placeholder='Title' type='text'></input>
-                <input ref={reciverRef} placeholder='Reciver' type='text'></input>
-                <input ref={contentRef} className='content' placeholder='Content' type='text'></input>
-                <button onClick={e => sendMessage(e)}>Send</button>
-            </form>
-
-            <div className='filters'>
-                <button onClick={getMessages}>All</button>
-                <button onClick={read}>Read</button>
-                <button onClick={send}>Send</button>
+            <div id='formDiv' className='form'>
+                <form>
+                    <h1>Write</h1>
+                    <input ref={titleRef} placeholder='Title' type='text'></input>
+                    <input ref={reciverRef} placeholder='Reciver' type='text'></input>
+                    <textarea ref={contentRef} className='content' placeholder='Content' type='text'></textarea>
+                    <button onClick={e => sendMessage(e)}>Send</button>
+                </form>
             </div>
 
-            <div className='messages-list'>
-                {messages.map(message => {
-                    return (
-                        <div className='message' key={message.content}>
-                            <p>{message._id}</p>
-                            <p>{message.title}</p>
-                            <p>{message.content}</p>
-                            <p>{message.read ? 'Read' : 'Unread'}</p>
-                            <button onClick={() => readMessage(message._id)}>Read</button>
-                            <button className='delete' onClick={() => deleteMessage(message._id)}>Delete</button>
-                        </div>
-                    )
-                })}
+            <div className='rightDiv'>
+                <div className='filters'>
+                    <button onClick={getMessages}>All</button>
+                    <button onClick={read}>Read</button>
+                    <button onClick={send}>Send</button>
+                </div>
+
+                <div className='messages-list'>
+                    {messages.map(message => {
+                        return (
+                            <div className='message' key={message.content}>
+                                <p>{message._id}</p>
+                                <p>{message.title}</p>
+                                <p>{message.content}</p>
+                                <p>{message.read ? 'Read' : 'Unread'}</p>
+                                <button onClick={() => readMessage(message._id)}>Read</button>
+                                <button className='delete' onClick={() => deleteMessage(message._id)}>Delete</button>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
-        </div>
+        </>
     )
 };
 

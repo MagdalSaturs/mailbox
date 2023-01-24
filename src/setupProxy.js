@@ -8,6 +8,7 @@ module.exports = function(app) {
       '/api/delete/message',
       '/api/read/message',
       '/api/add/message',
+      '/api/send/messages',
     ],
 
     createProxyMiddleware({
