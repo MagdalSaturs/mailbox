@@ -1,44 +1,43 @@
 body {
-    background: #039be5;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    
+  background: #cccccc;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    form {
-        display: flex;
-        flex-direction: column;
-        padding: 10%;
+    flex-direction: column;
+    padding: 10%;
 
-        input {
-            margin: 10px 0;
-            padding: 10px;
-            border: 0;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button {
-            margin: 10px 0;
-            padding: 10px;
-            border: 0;
-            border-radius: 5px;
-            font-size: 16px;
-            background: #006db3;
-            color: #fff;
-            cursor: pointer;
-
-            &:hover {
-                background: #004c7f;
-            }
-        }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      border: 0;
+      border-radius: 5px;
+      font-size: 16px;
     }
+
+    button {
+      margin: 10px 0;
+      padding: 10px;
+      border: 0;
+      border-radius: 5px;
+      font-size: 16px;
+      background: #fff;
+      color: #039be5;
+
+      &:hover {
+        cursor: pointer;
+        background: rgb(223, 223, 223);
+      }
+    }
+  }
 }

@@ -1,209 +1,113 @@
 body {
-    background: white;
-    color: #000;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  background: white;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-// .messages {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     padding: 30px 0 0 0;
-
-
-//     form {
-//         display: flex;
-//         flex-direction: column;
-//         padding: 20px;
-//         background: #038be5;
-//         width: 50%;
-//         border-radius: 5px;
-
-//         input {
-//             margin: 10px 0;
-//             padding: 10px;
-//             border: 0;
-//             border-radius: 5px;
-//             font-size: 16px;
-//             background: #f2f2f2;
-//         }
-
-//         .content {
-//             height: 100px;
-//             scroll-behavior: auto;
-//         }
-
-//         button {
-//             margin: 10px 0;
-//             padding: 10px;
-//             border: 0;
-//             border-radius: 5px;
-//             font-size: 16px;
-//             background: #006db3;
-//             color: #fff;
-//             cursor: pointer;
-
-//             &:hover {
-//                 background: #004c7f;
-//             }
-//         }
-//     }
-
-//     .filters {
-//         button {
-//             margin: 10px 10px;
-//             padding: 10px;
-//             border: 0;
-//             border-radius: 5px;
-//             font-size: 16px;
-//             background: #006db3;
-//             color: #fff;
-//             cursor: pointer;
-
-//             &:hover {
-//                 background: #004c7f;
-//             }
-//         }
-//     }
-    
-//     .messages-list {
-//         display: flex;
-//         flex-direction: column;
-//         padding: 20px;
-//         background: #038be5;
-//         width: 50%;
-//         border-radius: 5px;
-//         .message {
-//             display: flex;
-//             margin-bottom: 10px;
-//             margin-top: 10px;
-
-//             p {
-//                 margin: 2px;
-//                 border: 1px solid black;
-//                 padding: 4px;
-//                 background: white;
-//             }
-
-//             button {
-//                 margin: 10px 10px;
-//                 padding: 10px;
-//                 border: 0;
-//                 border-radius: 5px;
-//                 font-size: 16px;
-//                 background: gold;
-//                 color: #fff;
-//                 cursor: pointer;
-    
-//                 &:hover {
-//                     background: goldenrod;
-//                 }
-//             }
-//         }
-//     }
-// }
-
 .form {
-    float:left;
-    background: lightgrey;
-    margin-left:auto;
-    width: 50%;
+  float: left;
+  background: lightgrey;
+  margin-left: auto;
+  width: 50%;
 
-    form {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        border-radius: 5px;
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 5px;
 
-        input {
-            margin: 10px 0;
-            padding: 10px;
-            border: 0;
-            border-radius: 5px;
-            font-size: 16px;
-            background: #f2f2f2;
-        }
-
-        .content {
-            height: 100px;
-            resize: none;
-        }
-
-        button {
-            margin: 10px 0;
-            padding: 10px;
-            border: 0;
-            border-radius: 5px;
-            font-size: 16px;
-            background: #006db3;
-            color: #fff;
-            cursor: pointer;
-
-            &:hover {
-                background: #004c7f;
-            }
-        }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      border: 0;
+      border-radius: 5px;
+      font-size: 16px;
+      background: #f2f2f2;
     }
+
+    .content {
+      height: 100px;
+      resize: none;
+    }
+
+    button {
+      margin: 10px 0;
+      padding: 10px;
+      border: 0;
+      border-radius: 5px;
+      font-size: 16px;
+      background: #fff;
+      color: black;
+      cursor: pointer;
+
+      &:hover {
+        background: #e5e5e5;
+      }
+    }
+  }
 }
 
 .rightDiv {
-    float: right;
-    background: lightgray;
-    margin-right: auto;
-    width: 50%;
+  float: right;
+  background: lightgray;
+  margin-right: auto;
+  width: 50%;
 
-    .filters {
-        button {
-            margin: 10px 10px;
-            padding: 10px;
-            border: 0;
-            border-radius: 5px;
-            font-size: 16px;
-            background: #006db3;
-            color: #fff;
-            cursor: pointer;
+  .filters {
+    button {
+      margin: 10px 10px;
+      padding: 10px;
+      border: 0;
+      border-radius: 5px;
+      font-size: 16px;
+      background: #fff;
+      color: black;
+      cursor: pointer;
 
-            &:hover {
-                background: #004c7f;
-            }
-        }
+      &:hover {
+        background: #e5e5e5;
+      }
+    }
+  }
+
+  .messages-list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 5px;
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      border: 1px solid #000;
+      width: 100%;
+      max-width: 600px;
+      text-align: left;
+      font-size: 16px;
+
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 10px;
+      }
     }
 
-    .messages-list {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        border-radius: 5px;
-        .message {
-            display: flex;
-            margin-bottom: 10px;
-            margin-top: 10px;
+    button {
+      margin: 2px;
+      padding: 4px;
+      border: 0;
+      border-radius: 5px;
+      font-size: 16px;
+      background: #ffff;
+      color: black;
+      cursor: pointer;
 
-            p {
-                margin: 2px;
-                border: 1px solid black;
-                padding: 4px;
-                background: white;
-            }
-
-            button {
-                margin: 10px 10px;
-                padding: 10px;
-                border: 0;
-                border-radius: 5px;
-                font-size: 16px;
-                background: gold;
-                color: #fff;
-                cursor: pointer;
-
-                &:hover {
-                    background: goldenrod;
-                }
-            }
-        }
+      &:hover {
+        background: #cccccc;
+      }
     }
+  }
 }
