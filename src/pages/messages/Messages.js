@@ -5,6 +5,7 @@ import axios from "axios";
 
 const Messages = () => {
   const [messages, setMessages] = React.useState([]);
+  const [userEmails, setUserEmails] = React.useState([]);
   const token = sessionStorage.getItem("token");
   const titleRef = React.createRef();
   const reciverRef = React.createRef();
@@ -91,6 +92,21 @@ const Messages = () => {
     }
   };
 
+  useEffect(() => {
+    const getEmails = async () => {
+      try {
+        const response = await axios.get("/api/get/emails");
+
+        if (response.data.success) {
+          setUserEmails(response.data.emails);
+        }
+      } catch (error) {
+        console.log("Nie udało się wybrać emaila");
+      }
+    };
+    getEmails();
+  }, []);
+
   return (
     <>
       <h1>Messages</h1>
@@ -99,7 +115,11 @@ const Messages = () => {
           <h1>Write</h1>
           <spam></spam>
           <input ref={titleRef} placeholder="Title" type="text"></input>
-          <input ref={reciverRef} placeholder="Reciver" type="text"></input>
+          <select ref={reciverRef}>
+            {userEmails.map((user) => {
+              return <option>{user}</option>;
+            })}
+          </select>
           <textarea
             ref={contentRef}
             className="content"

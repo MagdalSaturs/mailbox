@@ -1,113 +1,57 @@
-body {
-  background: white;
-  color: #000;
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
+.form {
+  padding: 30px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px gray;
   text-align: center;
 }
 
-.form {
-  float: left;
-  background: lightgrey;
-  margin-left: auto;
-  width: 50%;
-
-  form {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 5px;
-
-    input {
-      margin: 10px 0;
-      padding: 10px;
-      border: 0;
-      border-radius: 5px;
-      font-size: 16px;
-      background: #f2f2f2;
-    }
-
-    .content {
-      height: 100px;
-      resize: none;
-    }
-
-    button {
-      margin: 10px 0;
-      padding: 10px;
-      border: 0;
-      border-radius: 5px;
-      font-size: 16px;
-      background: #fff;
-      color: black;
-      cursor: pointer;
-
-      &:hover {
-        background: #e5e5e5;
-      }
-    }
-  }
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px gray;
+  font-size: 16px;
 }
 
 .rightDiv {
-  float: right;
-  background: lightgray;
-  margin-right: auto;
-  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .filters {
-    button {
-      margin: 10px 10px;
-      padding: 10px;
-      border: 0;
-      border-radius: 5px;
-      font-size: 16px;
-      background: #fff;
-      color: black;
-      cursor: pointer;
+.filters {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
 
-      &:hover {
-        background: #e5e5e5;
-      }
-    }
-  }
+.messages-list {
+  width: 80%;
+  padding: 30px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px gray;
+}
 
-  .messages-list {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 5px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-    table {
-      margin: 0 auto;
-      border-collapse: collapse;
-      border: 1px solid #000;
-      width: 100%;
-      max-width: 600px;
-      text-align: left;
-      font-size: 16px;
+td,
+th {
+  border: 1px solid gray;
+  padding: 10px;
+  text-align: left;
+}
 
-      th,
-      td {
-        border: 1px solid #000;
-        padding: 10px;
-      }
-    }
-
-    button {
-      margin: 2px;
-      padding: 4px;
-      border: 0;
-      border-radius: 5px;
-      font-size: 16px;
-      background: #ffff;
-      color: black;
-      cursor: pointer;
-
-      &:hover {
-        background: #cccccc;
-      }
-    }
-  }
+button {
+  background-color: gray;
+  color: white;
+  cursor: pointer;
 }
