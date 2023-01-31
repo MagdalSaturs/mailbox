@@ -162,7 +162,7 @@ const Messages = () => {
                     </td>
                     <td>
                       <button onClick={() => deleteMessage(message)}>
-                        Delate
+                        Delete
                       </button>
                     </td>
                   </tr>
