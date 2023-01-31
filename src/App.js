@@ -1,6 +1,6 @@
-import './App.scss';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Login, Messages } from './pages';
+import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Login, Messages } from "./pages";
 
 function App() {
   return (
